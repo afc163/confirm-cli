@@ -23,7 +23,7 @@ confirm('Is this package awosome?',
   });
 ```
 
-![](https://t.alipayobjects.com/images/T1h0xeXihoXXXXXXXX.png)
+![screenshot](https://t.alipayobjects.com/images/T1zJheXmjzXXXXXXXX.png)
 
 Press `tab` (or `left` or `right` key) to switch current button, and press `enter` to confirm.
 
