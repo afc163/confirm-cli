@@ -27,7 +27,7 @@ confirm('Is this package awosome?',
 
 Press `tab` (or `left` or `right` key) to switch current button, and press `enter` to confirm.
 
-## More options
+#### More options
 
 ```js
 confirm('Is this package awosome?',
@@ -41,7 +41,7 @@ confirm('Is this package awosome?',
   });
 ```
 
-### Example
+## Examples
 
 ```bash
 $ git clone git@github.com:afc163/confirm-cli.git
