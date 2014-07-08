@@ -33,8 +33,9 @@ Press `tab` (or `left` or `right` key) to switch current button, and press `ente
 $ git clone git@github.com:afc163/confirm-cli.git
 $ cd confirm-cli
 & npm install
-$ node example/basic.js
-& node example/tabs.js
+$ node examples/basic.js
+& node examples/indent.js
+& node examples/text.js
 ```
 
 ## License

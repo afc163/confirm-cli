@@ -5,6 +5,6 @@ confirm('Are you ok?', function() {
 }, function() {
   console.log('Selected no!');
 }, {
-  tabs: 4
+  indent: 4
 });
 

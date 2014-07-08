@@ -1,14 +1,18 @@
 var colorful = require('colorful');
+var multiple = require('multiple');
+var length = require('stringbitlength');
 var keypress = require('keypress');
 keypress(process.stdin);
 var yesorno;
-var tabs;
+var indent;
 var message;
+var text;
 
 module.exports = function(msg, yesCallback, noCallback, options) {
   message = msg || 'Is this package awosome?';
   options = options || {};
-  tabs = options.tabs || 0;
+  indent = options.indent || 0;
+  text = options.text || ['Yes', 'No'];
 
   output();
   process.stdin.on('keypress', function (ch, key) {
@@ -47,17 +51,23 @@ module.exports = function(msg, yesCallback, noCallback, options) {
 function output() {
   yesorno = !yesorno;
   write(message + '\n');
-  write('┌─────────────────────────┐\n');
+  write('┌─' + multiple('─', length(text[0]) + length(text[1]) + 9) + '─┐\n');
   if (yesorno) {
-    write('│   ' + colorful.cyan('╔═══════╗') +'  ' + colorful.white('╔══════╗') +'   │\n');
-    write('│   ' + colorful.cyan('║  Yes  ║') +'  ' + colorful.white('║  No  ║ ') +'  │\n');
-    write('│   ' + colorful.cyan('╚═══════╝') +'  ' + colorful.white('╚══════╝') +'   │\n');
+    write('│ ' + colorful.cyan('╔═' + multiple('═', length(text[0])) + '═╗') + ' ' +
+          colorful.white('┌─' + multiple('─', length(text[1])) + '─┐') +' │\n');
+    write('│ ' + colorful.cyan('║ ' + text[0] + ' ║') + ' ' +
+          colorful.white('│ ' + text[1] + ' │') +' │\n');
+    write('│ ' + colorful.cyan('╚═' + multiple('═', length(text[0])) + '═╝') + ' ' +
+          colorful.white('└─' + multiple('─', length(text[1])) + '─┘') +' │\n');
   } else {
-    write('│   ' + colorful.white('╔═══════╗') +'  ' + colorful.cyan('╔══════╗') +'   │\n');
-    write('│   ' + colorful.white('║  Yes  ║') +'  ' + colorful.cyan('║  No  ║ ') +'  │\n');
-    write('│   ' + colorful.white('╚═══════╝') +'  ' + colorful.cyan('╚══════╝') +'   │\n');
+    write('│ ' + colorful.white('┌─' + multiple('─', length(text[0]))  + '─┐') + ' ' +
+      colorful.cyan('╔═' + multiple('═', length(text[1])) + '═╗') +' │\n');
+    write('│ ' + colorful.white('│ ' + text[0] + ' │') + ' ' +
+          colorful.cyan('║ ' + text[1] + ' ║') +' │\n');
+    write('│ ' + colorful.white('└─' + multiple('─', length(text[0])) + '─┘') + ' ' +
+      colorful.cyan('╚═' + multiple('═', length(text[1])) + '═╝') +' │\n');
   }
-  write('└─────────────────────────┘\n');
+  write('└─' + multiple('─', length(text[0]) + length(text[1]) + 9) + '─┘\n');
   write(colorful.gray('Press [tab] to switch, [enter] to confirm\n'));
 }
 
@@ -66,9 +76,9 @@ function clear() {
 }
 
 function write(str) {
-  var tabstr = '';
-  for (var i=0; i<tabs; i++) {
-    tabstr += ' ';
+  var indenttr = '';
+  for (var i=0; i<indent; i++) {
+    indenttr += ' ';
   }
-  process.stdout.write(tabstr + str);
+  process.stdout.write(indenttr + str);
 }

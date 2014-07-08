@@ -2,6 +2,12 @@
   "name": "confirm-cli",
   "version": "0.1.0",
   "description": "A confirm interface in command line",
+  "keywords": [
+    "cli",
+    "confirm",
+    "alert",
+    "prompt"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:afc163/confirm-cli.git"
@@ -11,6 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "colorful": "^2.1.0",
-    "keypress": "^0.2.1"
+    "keypress": "^0.2.1",
+    "multiple": "^0.1.0",
+    "stringbitlength": "^1.0.1"
   }
 }
