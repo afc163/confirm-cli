@@ -27,6 +27,20 @@ confirm('Is this package awosome?',
 
 Press `tab` (or `left` or `right` key) to switch current button, and press `enter` to confirm.
 
+## More options
+
+```js
+confirm('Is this package awosome?',
+  function() {
+    console.log('Selected yes!');
+  }, function() {
+    console.log('Selected no!');
+  }, {
+    indent: 4,
+    text: ['OK', 'Cancel']
+  });
+```
+
 ### Example
 
 ```bash
