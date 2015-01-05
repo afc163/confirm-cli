@@ -3,7 +3,7 @@ var multiple = require('multiple');
 var length = require('stringbitlength');
 var keypress = require('keypress');
 keypress(process.stdin);
-var yesorno;
+var yesorno = true;
 var indent;
 var message;
 var text;

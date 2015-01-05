@@ -2,7 +2,7 @@
 
 A confirm interface in command line.
 
-[![NPM version](https://badge.fury.io/js/confirm-cli.png)](http://badge.fury.io/js/confirm-cli)
+[![NPM version](https://img.shields.io/npm/v/confirm-cli.svg?style=flat)](https://npmjs.org/package/confirm-cli)
 
 ---
 
