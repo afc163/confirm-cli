@@ -14,8 +14,7 @@ module.exports = function(msg, yesCallback, noCallback, options) {
   indent = options.indent || 0;
   text = options.text || ['Yes', 'No'];
 
-  output();
-  process.stdin.on('keypress', function (ch, key) {
+  var onkeypress = function (ch, key) {
     if (key.name === 'tab') {
       clear();
       output();
@@ -39,12 +38,15 @@ module.exports = function(msg, yesCallback, noCallback, options) {
     if (key.name === 'return') {
       callback = yesorno ? yesCallback : noCallback;
       callback && callback();
-      process.exit();
+
+      process.stdin.removeListener('keypress', onkeypress);
+      process.stdin.pause();
     }
-  });
+  };
 
+  output();
+  process.stdin.on('keypress', onkeypress);
   process.stdin.setRawMode(true);
-
 };
 
 
