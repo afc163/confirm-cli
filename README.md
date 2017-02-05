@@ -55,3 +55,8 @@ $ node examples/basic.js
 ## License
 
 The MIT License (MIT)
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/afc163/confirm-cli/badge.svg?style=beer-square)](https://beerpay.io/afc163/confirm-cli)  [![Beerpay](https://beerpay.io/afc163/confirm-cli/make-wish.svg?style=flat-square)](https://beerpay.io/afc163/confirm-cli?focus=wish)
